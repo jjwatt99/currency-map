@@ -1,0 +1,20 @@
+{
+  "name": "hrsf72-mvp",
+  "version": "1.0.0",
+  "description": "View your currencies on the best interface!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjwatt99/hrsf72-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjwatt99/hrsf72-mvp/issues"
+  },
+  "homepage": "https://github.com/jjwatt99/hrsf72-mvp#readme"
+}
