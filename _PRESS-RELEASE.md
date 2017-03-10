@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Real-time Currency Map
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > For all investors who want visualize their currency investments and their perfomance
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > There are many financial websites with currency market information. However, no one offers you a visual representation of your currencies which updates in real-time. Using our product you will be able to see the currency, price, color, and percent change. The color for currency items are green or red to indicate whether it has a positive or negative change compared to the previous day.
 
 ## Problem ##
   > Describe the problem your product solves.
+  > The problem with current products is that they are usually text or static images. Our product offers a visual representation that updates in real time. This is the next step in portfolio management and leaves the old text-based financial websites behind.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  > We solve this problem by using the latest technology like React.js to create a visually appealing representation of currencies for investors.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  > "This thing is on point!"
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  > You just sign up or log in and view the currencies update in real-time.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Wow! What a solid product!"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  > Please visit the website and enjoy the view!
