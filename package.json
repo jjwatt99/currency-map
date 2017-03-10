@@ -4,6 +4,8 @@
   "description": "View your currencies on the best interface!",
   "main": "index.js",
   "scripts": {
+    "compile": "webpack",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,8 @@
     "babel-loader": "^6.4.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "webpack": "^2.2.1"
+    "express": "^4.15.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1"
   }
 }
