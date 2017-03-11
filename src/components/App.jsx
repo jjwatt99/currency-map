@@ -1,5 +1,6 @@
 import React from 'react';
 import example from '../ExampleData.js';
+import previousData from '../Previous.js';
 import ItemList from './ItemList.jsx';
 
 class App extends React.Component {
@@ -7,48 +8,49 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			display: false,
-			currencyData: []
+			currencyData: [],
 		}
+
 
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	componentWillMount() {
-		this.props.searchApi('EURUSD', function(data) {
-			var array = this.state.currencyData;
-			array.push(data);
-			this.setState({
-				currencyData: array
-			}); 
-			console.log('this is currencyData', this.state.currencyData);
-		}.bind(this));
+		// this.props.searchApi('EURUSD', function(data) {
+		// 	var array = this.state.currencyData;
+		// 	array.push(data);
+		// 	this.setState({
+		// 		currencyData: array
+		// 	}); 
+		// 	console.log('this is currencyData', this.state.currencyData);
+		// }.bind(this));
 
-		this.props.searchApi('USDJPY', function(data) {
-			var array = this.state.currencyData;
-			array.push(data);
-			this.setState({
-				currencyData: array
-			}); 
-			console.log('this is currencyData', this.state.currencyData);
-		}.bind(this));
+		// this.props.searchApi('USDJPY', function(data) {
+		// 	var array = this.state.currencyData;
+		// 	array.push(data);
+		// 	this.setState({
+		// 		currencyData: array
+		// 	}); 
+		// 	console.log('this is currencyData', this.state.currencyData);
+		// }.bind(this));
 
-		this.props.searchApi('GBPUSD', function(data) {
-			var array = this.state.currencyData;
-			array.push(data);
-			this.setState({
-				currencyData: array
-			}); 
-			console.log('this is currencyData', this.state.currencyData);
-		}.bind(this));
+		// this.props.searchApi('GBPUSD', function(data) {
+		// 	var array = this.state.currencyData;
+		// 	array.push(data);
+		// 	this.setState({
+		// 		currencyData: array
+		// 	}); 
+		// 	console.log('this is currencyData', this.state.currencyData);
+		// }.bind(this));
 
-		this.props.searchApi('CHFUSD', function(data) {
-			var array = this.state.currencyData;
-			array.push(data);
-			this.setState({
-				currencyData: array
-			}); 
-			console.log('this is currencyData', this.state.currencyData);
-		}.bind(this));
+		// this.props.searchApi('CHFUSD', function(data) {
+		// 	var array = this.state.currencyData;
+		// 	array.push(data);
+		// 	this.setState({
+		// 		currencyData: array
+		// 	}); 
+		// 	console.log('this is currencyData', this.state.currencyData);
+		// }.bind(this));
 	}
 
 	handleClick() {
@@ -56,12 +58,16 @@ class App extends React.Component {
 	}
 
 	render() {
+		for (var i = 0; i < example.length; i++) {
+			example[i].Previous = previousData[i].Close;
+		}
+		// var both = [example, [{close: 1.1}, {close: 1.15}]];
 	  return (
 	  	<div>
 		  	<button onClick={this.handleClick}>
 		  		Display
 		  	</button>
-		  	{this.state.display ? <div><ItemList currencies={this.state.currencyData}/></div> : null}
+		  	{this.state.display ? <div><ItemList currencies={example}/></div> : null}
 		  </div>	
 	  );
 	}
