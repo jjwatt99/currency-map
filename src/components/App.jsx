@@ -1,5 +1,6 @@
-
 import React from 'react';
+import example from '../ExampleData.js';
+import ItemList from './ItemList.jsx'
 
 class App extends React.Component {
 	constructor(props) {
@@ -17,9 +18,14 @@ class App extends React.Component {
 
 	render() {
 	  return (
-	  	<button onClick={this.handleClick}>
-	  		Display
-	  	</button>
+	  	<div>
+		  	<button onClick={this.handleClick}>
+		  		Display
+		  	</button>
+		  	<div>
+		  	  <ItemList currencies={example}/>
+		  	</div>
+		  </div>	
 	  );
 	}
 }
