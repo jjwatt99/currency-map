@@ -1,7 +1,7 @@
 import React from 'react';
 
 var ItemListEntry = (props) => (
-  <div>
+  <div id="entry">
     <div>{props.currency.Symbol}</div>
   </div>
 );

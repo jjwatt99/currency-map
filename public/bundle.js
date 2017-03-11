@@ -9579,11 +9579,11 @@ var App = function (_React$Component) {
 					{ onClick: this.handleClick },
 					'Display'
 				),
-				_react2.default.createElement(
+				this.state.display ? _react2.default.createElement(
 					'div',
 					null,
 					_react2.default.createElement(_ItemList2.default, { currencies: _ExampleData2.default })
-				)
+				) : null
 			);
 		}
 	}]);
@@ -9647,10 +9647,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ItemListEntry = function ItemListEntry(props) {
   return _react2.default.createElement(
-    'div',
-    null,
+    "div",
+    { id: "entry" },
     _react2.default.createElement(
-      'div',
+      "div",
       null,
       props.currency.Symbol
     )

@@ -22,9 +22,7 @@ class App extends React.Component {
 		  	<button onClick={this.handleClick}>
 		  		Display
 		  	</button>
-		  	<div>
-		  	  <ItemList currencies={example}/>
-		  	</div>
+		  	{this.state.display ? <div><ItemList currencies={example}/></div> : null}
 		  </div>	
 	  );
 	}
