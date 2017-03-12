@@ -3,6 +3,7 @@ import React from 'react';
 var ItemListEntry = (props) => {
   var change = props.currency.Mid - props.currency.Previous;
   change = change.toString();
+  console.log('fixing change')
   if (change[0] === '-') {
   	change = change.slice(0, 6);
   } else {

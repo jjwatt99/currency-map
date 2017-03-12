@@ -15,10 +15,28 @@ var previousData = [{
 		"Open":1.05768,
 		"High":1.07005,
 		"Low":1.0572,
-		"Close":1.1,
+		"Close":1.067,
 		"Average":1.061911
   },
 	{
+	  "Outcome":"Success",
+		"Message":null,
+		"Identity":"Request",
+		"Delay":0.0708656,
+		"BaseCurrency":"USD",
+		"QuoteCurrency":"JPY",
+		"Symbol":"USDJPY",
+		"StartDate":"03/09/2017",
+		"StartTime":"10:00:00 PM",
+		"EndDate":"03/10/2017",
+		"EndTime":"10:00:00 PM",
+		"Open":1.05768,
+		"High":1.07005,
+		"Low":1.0572,
+		"Close":114.77,
+		"Average":1.061911
+  },
+  {
 		"Outcome":"Success",
 		"Message":null,
 		"Identity":"Request",
@@ -33,8 +51,27 @@ var previousData = [{
 		"Open":1.05768,
 		"High":1.07005,
 		"Low":1.0572,
-		"Close":1.15,
+		"Close":1.2164,
 		"Average":1.061911
-}];
+  },
+	{
+		"Outcome":"Success",
+		"Message":null,
+		"Identity":"Request",
+		"Delay":0.0309764,
+		"BaseCurrency":"CHF",
+		"QuoteCurrency":"USD",
+		"Symbol":"CHFUSD",
+		"StartDate":"03/09/2017",
+		"StartTime":"10:00:00 PM",
+		"EndDate":"03/10/2017",
+		"EndTime":"10:00:00 PM",
+		"Open":1.05768,
+		"High":1.07005,
+		"Low":1.0572,
+		"Close":0.9875,
+		"Average":1.061911
+  }
+];
 
 export default previousData;

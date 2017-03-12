@@ -1,17 +1,15 @@
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
+var app = express();
 
 app.use(express.static(__dirname + '/../public'));
 
-// app.get('/items', function (req, res) {
-//   items.selectAll(function(err, data) {
-//     if(err) {
-//       res.sendStatus(500);
-//     } else {
-//       res.json(data);
-//     }
-//   });
+// app.get('/', function(req, res) {
+//   res.redirect('/login');
+// });
+
+// app.get('/login', function(req, res) {
+// 	res.send('hello');
 // });
 
 app.listen(3000, function() {

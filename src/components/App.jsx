@@ -7,7 +7,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			display: true,
+			display: false,
 			currencyData: [],
 		}
 
@@ -15,27 +15,27 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
-		function search() {
-			this.props.searchApi('EURUSD', function(data) {
-				var array = this.state.currencyData;
-				array[0] = data;
-				this.setState({
-					currencyData: array
-				}); 
-				console.log('this is currencyData', this.state.currencyData);
-			}.bind(this));
-		};
+		// function search() {
+		// 	this.props.searchApi('EURUSD', function(data) {
+		// 		var array = this.state.currencyData;
+		// 		array[0] = data;
+		// 		this.setState({
+		// 			currencyData: array
+		// 		}); 
+		// 		console.log('this is currencyData', this.state.currencyData);
+		// 	}.bind(this));
+		// };
 
-		setInterval(search.bind(this), 5000);
+		// setInterval(search.bind(this), 5000);
 
-		this.props.searchApi('EURUSD', function(data) {
-			var array = this.state.currencyData;
-			array.push(data);
-			this.setState({
-				currencyData: array
-			}); 
-			console.log('this is currencyData', this.state.currencyData);
-		}.bind(this));
+		// this.props.searchApi('EURUSD', function(data) {
+		// 	var array = this.state.currencyData;
+		// 	array.push(data);
+		// 	this.setState({
+		// 		currencyData: array
+		// 	}); 
+		// 	console.log('this is currencyData', this.state.currencyData);
+		// }.bind(this));
 
 		// this.props.searchApi('USDJPY', function(data) {
 		// 	var array = this.state.currencyData;
@@ -70,8 +70,8 @@ class App extends React.Component {
 	}
 
 	render() {
-		for (var i = 0; i < example.length; i++) {
-			example[i].Previous = previousData[i].Close;
+		for (var i = 0; i < this.state.currencyData.length; i++) {
+			this.state.currencyData[i].Previous = previousData[i].Close;
 		}
 	  return (
 	  	<div>
