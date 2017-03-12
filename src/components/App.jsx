@@ -7,23 +7,35 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			display: false,
+			display: true,
 			currencyData: [],
 		}
-
 
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	componentWillMount() {
-		// this.props.searchApi('EURUSD', function(data) {
-		// 	var array = this.state.currencyData;
-		// 	array.push(data);
-		// 	this.setState({
-		// 		currencyData: array
-		// 	}); 
-		// 	console.log('this is currencyData', this.state.currencyData);
-		// }.bind(this));
+		function search() {
+			this.props.searchApi('EURUSD', function(data) {
+				var array = this.state.currencyData;
+				array[0] = data;
+				this.setState({
+					currencyData: array
+				}); 
+				console.log('this is currencyData', this.state.currencyData);
+			}.bind(this));
+		};
+
+		setInterval(search.bind(this), 5000);
+
+		this.props.searchApi('EURUSD', function(data) {
+			var array = this.state.currencyData;
+			array.push(data);
+			this.setState({
+				currencyData: array
+			}); 
+			console.log('this is currencyData', this.state.currencyData);
+		}.bind(this));
 
 		// this.props.searchApi('USDJPY', function(data) {
 		// 	var array = this.state.currencyData;
@@ -61,13 +73,12 @@ class App extends React.Component {
 		for (var i = 0; i < example.length; i++) {
 			example[i].Previous = previousData[i].Close;
 		}
-		// var both = [example, [{close: 1.1}, {close: 1.15}]];
 	  return (
 	  	<div>
 		  	<button onClick={this.handleClick}>
 		  		Display
 		  	</button>
-		  	{this.state.display ? <div><ItemList currencies={example}/></div> : null}
+		  	{this.state.display ? <div><ItemList currencies={this.state.currencyData}/></div> : null}
 		  </div>	
 	  );
 	}
