@@ -17,6 +17,17 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
+		this.getData(function(data) {
+			var array = [
+  		  {Close: data[0]['euro']},
+  			{Close: data[0]['yen']},
+  			{Close: data[0]['pound']},
+  			{Close: data[0]['franc']}
+  		];
+  		this.setState({
+				previous: array
+			}); 
+		}.bind(this));
 		// function search() {
 		// 	this.props.searchApi('EURUSD', function(data) {
 		// 		var array = this.state.currencyData;
@@ -30,48 +41,48 @@ class App extends React.Component {
 
 		// setInterval(search.bind(this), 5000);
 
-		// this.props.searchApi('EURUSD', function(data) {
-		// 	var array = this.state.currencyData;
-		// 	array.push(data);
-		// 	this.setState({
-		// 		currencyData: array
-		// 	}); 
-		// 	console.log('this is currencyData', this.state.currencyData);
-		// }.bind(this));
+		this.props.searchApi('EURUSD', function(data) {
+			var array = this.state.currencyData;
+			array.push(data);
+			this.setState({
+				currencyData: array
+			}); 
+			console.log('this is currencyData', this.state.currencyData);
+		}.bind(this));
 
-		// this.props.searchApi('USDJPY', function(data) {
-		// 	var array = this.state.currencyData;
-		// 	array.push(data);
-		// 	this.setState({
-		// 		currencyData: array
-		// 	}); 
-		// 	console.log('this is currencyData', this.state.currencyData);
-		// }.bind(this));
+		this.props.searchApi('USDJPY', function(data) {
+			var array = this.state.currencyData;
+			array.push(data);
+			this.setState({
+				currencyData: array
+			}); 
+			console.log('this is currencyData', this.state.currencyData);
+		}.bind(this));
 
-		// this.props.searchApi('GBPUSD', function(data) {
-		// 	var array = this.state.currencyData;
-		// 	array.push(data);
-		// 	this.setState({
-		// 		currencyData: array
-		// 	}); 
-		// 	console.log('this is currencyData', this.state.currencyData);
-		// }.bind(this));
+		this.props.searchApi('GBPUSD', function(data) {
+			var array = this.state.currencyData;
+			array.push(data);
+			this.setState({
+				currencyData: array
+			}); 
+			console.log('this is currencyData', this.state.currencyData);
+		}.bind(this));
 
-		// this.props.searchApi('CHFUSD', function(data) {
-		// 	var array = this.state.currencyData;
-		// 	array.push(data);
-		// 	this.setState({
-		// 		currencyData: array
-		// 	}); 
-		// 	console.log('this is currencyData', this.state.currencyData);
-		// }.bind(this));
+		this.props.searchApi('CHFUSD', function(data) {
+			var array = this.state.currencyData;
+			array.push(data);
+			this.setState({
+				currencyData: array
+			}); 
+			console.log('this is currencyData', this.state.currencyData);
+		}.bind(this));
 	}
 
-	componentDidMount() {
-		$.ajax({
+	getData(callback) {
+    $.ajax({
 	  	url: '/money',
 	  	success: function(data) {
-	  		console.log(data);
+	  		callback(data);
 	  	}
 	  });
 	}
@@ -82,7 +93,7 @@ class App extends React.Component {
 
 	render() {
 		for (var i = 0; i < this.state.currencyData.length; i++) {
-			this.state.currencyData[i].Previous = previousData[i].Close;
+			this.state.currencyData[i].Previous = this.state.previous[i].Close;
 		}
 	  return (
 	  	<div>

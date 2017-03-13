@@ -10,11 +10,4 @@ db.once('open', function() {
   console.log('We are connected to the shortly database');
 });
 
-var moneySchema = mongoose.Schema({
-  euro: Number,
-  yen: Number,
-  pound: Number,
-  franc: Number
-});
-
 module.exports = db;
