@@ -10,7 +10,7 @@ var ItemListEntry = (props) => {
   	change = change.slice(0, 5);
   }
   return (
-	  <div id="entry">
+	  <div className="box" id={change > 0 ? "green" : "red"}>
 	    <div>{props.currency.Symbol}</div>
 	    <div>{props.currency.Mid}</div>
 	    <div>{change}</div>

@@ -19897,7 +19897,7 @@ var App = function (_React$Component) {
 		key: 'componentWillMount',
 		value: function componentWillMount() {
 			this.getData(function (data) {
-				var array = [{ Close: data[0]['euro'] }, { Close: data[0]['yen'] }, { Close: data[0]['pound'] }, { Close: data[0]['franc'] }];
+				var array = [{ Close: data[0]['euro'], Symbol: 'EURUSD' }, { Close: data[0]['yen'], Symbol: 'USDJPY' }, { Close: data[0]['pound'], Symbol: 'GBPUSD' }, { Close: data[0]['franc'], Symbol: 'CHFUSD' }];
 				this.setState({
 					previous: array
 				});
@@ -19970,7 +19970,12 @@ var App = function (_React$Component) {
 		key: 'render',
 		value: function render() {
 			for (var i = 0; i < this.state.currencyData.length; i++) {
-				this.state.currencyData[i].Previous = this.state.previous[i].Close;
+				for (var j = 0; j < this.state.previous.length; j++) {
+					if (this.state.currencyData[i].Symbol === this.state.previous[j].Symbol) {
+						this.state.currencyData[i].Previous = this.state.previous[j].Close;
+						break;
+					}
+				}
 			}
 			return _react2.default.createElement(
 				'div',
@@ -20057,7 +20062,7 @@ var ItemListEntry = function ItemListEntry(props) {
   }
   return _react2.default.createElement(
     'div',
-    { id: 'entry' },
+    { className: 'box', id: change > 0 ? "green" : "red" },
     _react2.default.createElement(
       'div',
       null,
