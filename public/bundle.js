@@ -19902,18 +19902,58 @@ var App = function (_React$Component) {
 					previous: array
 				});
 			}.bind(this));
-			// function search() {
-			// 	this.props.searchApi('EURUSD', function(data) {
-			// 		var array = this.state.currencyData;
-			// 		array[0] = data;
-			// 		this.setState({
-			// 			currencyData: array
-			// 		}); 
-			// 		console.log('this is currencyData', this.state.currencyData);
-			// 	}.bind(this));
-			// };
 
-			// setInterval(search.bind(this), 5000);
+			function search1() {
+				this.props.searchApi('EURUSD', function (data) {
+					var array = this.state.currencyData;
+					array[0] = data;
+					this.setState({
+						currencyData: array
+					});
+					console.log('this is currencyData', this.state.currencyData);
+				}.bind(this));
+			};
+
+			setInterval(search1.bind(this), 5000);
+
+			function search2() {
+				this.props.searchApi('USDJPY', function (data) {
+					var array = this.state.currencyData;
+					array[1] = data;
+					this.setState({
+						currencyData: array
+					});
+					console.log('this is currencyData', this.state.currencyData);
+				}.bind(this));
+			};
+
+			setInterval(search2.bind(this), 5250);
+
+			function search3() {
+				this.props.searchApi('GBPUSD', function (data) {
+					var array = this.state.currencyData;
+					array[2] = data;
+					this.setState({
+						currencyData: array
+					});
+					console.log('this is currencyData', this.state.currencyData);
+				}.bind(this));
+			};
+
+			setInterval(search3.bind(this), 5500);
+
+			function search4() {
+				this.props.searchApi('CHFUSD', function (data) {
+					var array = this.state.currencyData;
+					array[3] = data;
+					this.setState({
+						currencyData: array
+					});
+					console.log('this is currencyData', this.state.currencyData);
+				}.bind(this));
+			};
+
+			setInterval(search4.bind(this), 5750);
 
 			this.props.searchApi('EURUSD', function (data) {
 				var array = this.state.currencyData;
@@ -20100,7 +20140,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var apiKey = 'F4F8E345DED94BFA903A23F531857C17';
+var apiKey = 'EFCF95A50A7643E9B78ADEFDB350765A';
 
 exports.default = apiKey;
 
