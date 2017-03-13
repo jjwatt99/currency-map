@@ -2,6 +2,7 @@ import React from 'react';
 import example from '../ExampleData.js';
 import previousData from '../Previous.js';
 import ItemList from './ItemList.jsx';
+import $ from 'jquery';
 
 class App extends React.Component {
 	constructor(props) {
@@ -9,6 +10,7 @@ class App extends React.Component {
 		this.state = {
 			display: false,
 			currencyData: [],
+			previous: []
 		}
 
 		this.handleClick = this.handleClick.bind(this);
@@ -63,6 +65,15 @@ class App extends React.Component {
 		// 	}); 
 		// 	console.log('this is currencyData', this.state.currencyData);
 		// }.bind(this));
+	}
+
+	componentDidMount() {
+		$.ajax({
+	  	url: '/money',
+	  	success: function(data) {
+	  		console.log(data);
+	  	}
+	  });
 	}
 
 	handleClick() {
