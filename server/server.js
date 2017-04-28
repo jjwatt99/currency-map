@@ -12,13 +12,6 @@ app.get('/money', function(req, res) {
 	  res.json(data);
 	});
 });
-// app.get('/', function(req, res) {
-//   res.redirect('/login');
-// });
-
-// app.get('/login', function(req, res) {
-// 	res.send('hello');
-// });
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
